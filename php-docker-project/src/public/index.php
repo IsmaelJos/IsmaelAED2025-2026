@@ -1,13 +1,15 @@
 <?php
 
-$altura = 5;
-$asteriscos = [];
-for ($i=1; $i <= $altura; $i++) { 
-    array_push($asteriscos,"*");
-    foreach ($asteriscos as $asterisco) {
-        echo $asterisco," ";
+    function montañaAsteriscos(int $n, $m): void{
+        
+        for ($i=0; $i < $n; $i++) { 
+            
+            echo "<br>";
+        }
+
     }
-    echo "<br>";
-}
+
+    montañaAsteriscos(4,2);
+
 
 ?>
