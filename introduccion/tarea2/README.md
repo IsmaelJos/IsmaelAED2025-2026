@@ -40,12 +40,37 @@ Implementa una función __montañaAsteriscos(int $n, $m): void__ que imprima una
 ```php
     function montañaAsteriscos(int $n, $m): void{
 
-        $asteriscos = [];
-        for ($i=0; $i < $n; $i++) { 
-            array_push($asteriscos,"*");
-            echo "<br>";
-        }
+        $principio = 1;
+        $final = ($n*$m);
+        $completo = [[]];
+        for ($j=0; $j < $n ; $j++) { 
+            $linea = [];
+            for ($i=1; $i <= ($n*$m); $i++) { 
 
+                if($i<=$n){
+
+                    if($i<=$principio){
+                        array_push($linea,"*");
+                    }else {
+                        array_push($linea,"_");
+                    }
+
+                }else{ // $i>$n
+
+                    if($i>=$final){
+                        array_push($linea,"*");
+                    }else {
+                        array_push($linea,"_");
+                    }
+
+                }
+            }
+            echo implode($linea);
+            array_push($completo,$linea);
+            echo "<br>";
+            $principio++;
+            $final--;
+        }
     }
 
     montañaAsteriscos(4,2);
