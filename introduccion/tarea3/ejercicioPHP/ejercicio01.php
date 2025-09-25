@@ -1,11 +1,11 @@
 <?php
-
-    if(!file_exists("../outputPHP/datos.txt")){
-        $file = fopen("../outputPHP/datos.txt", "w");
+    $fileName = "../outputPHP/datos.txt";
+    if(!file_exists($fileName)){
+        $file = fopen($fileName, "w");
         fwrite($file, "Hola Mundo desde PHP");
         fclose($file);
     }
 
-    echo file_get_contents("../outputPHP/datos.txt"),"\n";
+    echo file_get_contents($fileName),"\n";
     
 ?>

@@ -1,0 +1,4 @@
+Mario: 9 
+Sonic: 8 
+Zelda: 10 
+Otro: 7 
