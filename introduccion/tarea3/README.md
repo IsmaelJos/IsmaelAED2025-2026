@@ -14,6 +14,7 @@ php ejercicioX.php
 
 Crea un fichero por ejercicio: `ejercicio01.php` … `ejercicio30.php`.
 
+[Ejercicio1](../tarea3/ejercicioPHP/ejercicio01.php)
 ---
 
 ### 1) Hola fichero (crear y leer)
@@ -28,7 +29,9 @@ datos.txt
 Hola Mundo desde PHP
 ```
 
+[Ejercicio2](../tarea3/ejercicioPHP/ejercicio02.php)
 ---
+
 
 ### 2) Guardar números en un fichero
 
@@ -46,6 +49,7 @@ numeros.txt
 10
 ```
 
+[Ejercicio3](../tarea3/ejercicioPHP/ejercicio03.php)
 ---
 
 ### 3) Contar palabras en un fichero
@@ -60,6 +64,7 @@ texto.txt
 PHP es muy divertido y potente.
 ```
 
+[Ejercicio4](../tarea3/ejercicioPHP/ejercicio04.php)
 ---
 
 ### 4) Escribir y leer array en fichero
@@ -78,6 +83,7 @@ Carlos
 Julia
 ```
 
+[Ejercicio5](../tarea3/ejercicioPHP/ejercicio05.php)
 ---
 
 ### 5) Copiar contenido de un fichero a otro
@@ -99,6 +105,7 @@ copia.txt
 Este es el archivo original.
 ```
 
+[Ejercicio6](../tarea3/ejercicioPHP/ejercicio06.php)
 ---
 
 ### 6) Invertir el contenido de un fichero
@@ -120,6 +127,7 @@ frase_invertida.txt
 PHP aloH
 ```
 
+[Ejercicio7](../tarea3/ejercicioPHP/ejercicio07.php)
 ---
 
 ### 7) Calcular suma desde fichero
@@ -134,6 +142,7 @@ datos_numericos.txt
 10,20,30,40
 ```
 
+[Ejercicio8](../tarea3/ejercicioPHP/ejercicio08.php)
 ---
 
 ### 8) Crear fichero de multiplicaciones
@@ -151,6 +160,7 @@ tabla5.txt
 5 x 10 = 50
 ```
 
+[Ejercicio9](../tarea3/ejercicioPHP/ejercicio09.php)
 ---
 
 ### 9) Registrar entradas de usuario
@@ -167,6 +177,7 @@ Pedro
 Lucía
 ```
 
+[Ejercicio10](../tarea3/ejercicioPHP/ejercicio10.php)
 ---
 
 ### 10) Leer JSON desde fichero
@@ -184,6 +195,7 @@ datos.json
 ]
 ```
 
+[Ejercicio11](../tarea3/ejercicioPHP/ejercicio11.php)
 ---
 
 ### 11) Diario personal secreto
@@ -198,6 +210,7 @@ diario.txt
 [2025-09-24 12:00] Almorcé pizza mientras programaba.
 ```
 
+[Ejercicio12](../tarea3/ejercicioPHP/ejercicio12.php)
 ---
 
 ### 12) Ranking de videojuegos
@@ -213,6 +226,8 @@ Mario: 9
 Sonic: 8
 ```
 
+
+[Ejercicio13](../tarea3/ejercicioPHP/ejercicio13.php)
 ---
 
 ### 13) Canción aleatoria
@@ -228,6 +243,7 @@ Bohemian Rhapsody
 Africa
 ```
 
+[Ejercicio14](../tarea3/ejercicioPHP/ejercicio14.php)
 ---
 
 ### 14) Generador de excusas divertidas
@@ -243,6 +259,7 @@ El Wi-Fi decidió tomarse el día libre.
 Me abdujeron los marcianos.
 ```
 
+[Ejercicio15](../tarea3/ejercicioPHP/ejercicio15.php)
 ---
 
 ### 15) Lista de chistes (rotativos)
@@ -258,6 +275,7 @@ Ayer vi un bit triste… estaba des-bit-ido.
 Yo no sudo, compilo.
 ```
 
+[Ejercicio16](../tarea3/ejercicioPHP/ejercicio16.php)
 ---
 
 ### 16) Adivina la palabra
@@ -273,6 +291,7 @@ platano
 cereza
 ```
 
+[Ejercicio17](../tarea3/ejercicioPHP/ejercicio17.php)
 ---
 
 ### 17) Generador de nombres para superhéroes
@@ -295,6 +314,7 @@ Tigre
 Lobo
 ```
 
+[Ejercicio18](../tarea3/ejercicioPHP/ejercicio18.php)
 ---
 
 ### 18) Encuesta de comidas favoritas
@@ -311,6 +331,7 @@ pizza
 pasta
 ```
 
+[Ejercicio19](../tarea3/ejercicioPHP/ejercicio19.php)
 ---
 
 ### 19) Simulador de tweets
@@ -325,6 +346,7 @@ tweets.txt
 [2025-09-24 10:00] Otro día más programando 🚀
 ```
 
+[Ejercicio20](../tarea3/ejercicioPHP/ejercicio20.php)
 ---
 
 ### 20) Historias locas (Mad Libs)
