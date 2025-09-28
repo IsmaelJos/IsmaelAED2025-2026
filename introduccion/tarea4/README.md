@@ -83,6 +83,8 @@ z1,z2,op
 8,0,division
 ```
 
+## Codigo Funcional
+
 ```php
 
     $fileNameInput = "../inputPHP/ops.csv";
@@ -209,6 +211,8 @@ divertido,2
 potente,1
 y,1
 ```
+
+## Codigo Funcional
 
 ```php
 
