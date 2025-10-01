@@ -28,7 +28,7 @@
             }
             
         }
-
+        fclose($fileOutput);
     }
     
     
