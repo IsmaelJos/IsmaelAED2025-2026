@@ -1,0 +1,11 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+SpringDataOrm,com.docencia,Main,7,0,0,0,3,0,2,0,2,0
+SpringDataOrm,com.docencia.service,ServiceNoteAbstract,8,3,0,0,2,1,2,1,2,1
+SpringDataOrm,com.docencia.service,JsonServiceNote,36,24,0,0,10,6,4,4,4,4
+SpringDataOrm,com.docencia.service,XmlServiceNote,41,24,0,0,11,6,5,4,5,4
+SpringDataOrm,com.docencia.model,Note,19,51,2,2,6,20,4,9,2,9
+SpringDataOrm,com.docencia.repo.file,FileNoteXmlRepository,12,0,0,0,4,0,2,0,2,0
+SpringDataOrm,com.docencia.repo.file,FileNoteJsonRepository,12,0,0,0,4,0,2,0,2,0
+SpringDataOrm,com.docencia.repo.file,FileNoteRepository,81,32,5,1,15,10,8,3,5,3
+SpringDataOrm,com.docencia.repo.file,FileNoteAbstractRepository,193,8,8,0,40,2,15,1,11,1
+SpringDataOrm,com.docencia.repo.jpa,NoteJpaRepository,63,0,6,0,17,0,11,0,8,0
