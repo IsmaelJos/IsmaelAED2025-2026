@@ -1,4 +1,6 @@
-package com.docencia.hotel.domain.model;
+package com.docencia.hotel.model;
+
+
 
 import java.util.Objects;
 
@@ -70,5 +72,7 @@ public class Hotel {
         this.nombre = nombre;
         this.direccion = direccion;
     }
+
+    
     
 }

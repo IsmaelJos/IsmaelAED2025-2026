@@ -1,10 +1,13 @@
-package com.docencia.hotel.domain.model;
+package com.docencia.hotel.model;
+
 
 import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,6 +26,10 @@ public class Room {
 
     @Column(name = "price_per_night")
     private Float precioNoche;
+
+    @ManyToOne
+    @JoinColumn(name = "hotel_id")
+    private String hotelId;
 
     public String getId() {
         return id;
@@ -48,6 +55,33 @@ public class Room {
         this.tipoHabitacion = tipoHabitacion;
     }
 
+    public Float getPrecioNoche() {
+        return precioNoche;
+    }
+
+    public void setPrecioNoche(Float precioNoche) {
+        this.precioNoche = precioNoche;
+    }
+
+    public String getHotelId() {
+        return hotelId;
+    }
+
+    public void setHotelId(String hotelId) {
+        this.hotelId = hotelId;
+    }
+
+    public Room() {
+    }
+
+    public Room(String id, String numHabitacion, String tipoHabitacion, Float precioNoche, String hotelId) {
+        this.id = id;
+        this.numHabitacion = numHabitacion;
+        this.tipoHabitacion = tipoHabitacion;
+        this.precioNoche = precioNoche;
+        this.hotelId = hotelId;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(id);
@@ -65,22 +99,5 @@ public class Room {
         return Objects.equals(id, other.id);
     }
 
-    public Room() {
-    }
-
-    public Room(String id, String numHabitacion, String tipoHabitacion, Float precioNoche) {
-        this.id = id;
-        this.numHabitacion = numHabitacion;
-        this.tipoHabitacion = tipoHabitacion;
-        this.precioNoche = precioNoche;
-    }
-
-    public Float getPrecioNoche() {
-        return precioNoche;
-    }
-
-    public void setPrecioNoche(Float precioNoche) {
-        this.precioNoche = precioNoche;
-    }
-
+    
 }
