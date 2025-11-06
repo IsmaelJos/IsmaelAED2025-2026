@@ -1,15 +1,10 @@
 package com.docencia.hotel.persistance.jpa;
-import java.util.List;
-import java.util.UUID;
-
-import org.springframework.transaction.annotation.Transactional;
-
 
 public abstract class AbstractJpaRepository<T,ID>{
-    
+    /*
     private T repository;
 
-    /* 
+     
     public boolean exists(String id) {
         return repository.existsById(id);
     }
