@@ -3,12 +3,14 @@ package com.docencia.hotel.persistance.jpa;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.docencia.hotel.domain.repository.IRoomJpaRepository;
 import com.docencia.hotel.model.Room;
 import com.docencia.hotel.persistance.jpa.interfaces.IRoomRepository;
 
+@Repository
 public class RoomJpaRepository implements IRoomRepository{
 
     private final IRoomJpaRepository repository;

@@ -3,12 +3,14 @@ package com.docencia.hotel.persistance.jpa;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.docencia.hotel.domain.repository.IGuestJpaRepository;
 import com.docencia.hotel.model.Guest;
 import com.docencia.hotel.persistance.jpa.interfaces.IGuestRepository;
 
+@Repository
 public class GuestJpaRepository implements IGuestRepository{
 
     private final IGuestJpaRepository repository;

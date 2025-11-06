@@ -3,12 +3,14 @@ package com.docencia.hotel.persistance.jpa;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.docencia.hotel.domain.repository.IBookingJpaRepository;
 import com.docencia.hotel.model.Booking;
 import com.docencia.hotel.persistance.jpa.interfaces.IBookingRepository;
 
+@Repository
 public class BookingJpaRepository implements IBookingRepository /*extends AbstractJpaRepository<IBookingJpaRepository, String>*/{
 
     private final IBookingJpaRepository repository;
