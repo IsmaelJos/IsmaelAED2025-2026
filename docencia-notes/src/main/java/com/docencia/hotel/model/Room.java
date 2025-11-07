@@ -9,98 +9,105 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
 @Entity
-@Table(name = "room")
+@Table(name="room")
 public class Room {
-
+    
     @Id
-    @Column(name = "id")
+    @Column(name="id")
     private String id;
 
     @Column(name = "number")
-    private int numHabitacion;
+    private int numero;
 
-    @Column(name = "type")
-    private String tipoHabitacion;
+    @Column(name="type")
+    private String tipo;
 
-    @Column(name = "price_per_night")
-    private float precioNoche;
+    @Column(name="price_per_night")
+    private float precioPorNoche;
 
     @ManyToOne
     @JoinColumn(name="hotel_id",nullable=false)
-    private String hotelId;
+    private Hotel hotel;
+
+    @OneToMany(mappedBy="room")
+    private Set<Booking> bookings;
+    
+    /**
+     * Constructor vacio
+     */
+    public Room() {
+    }
+
+    /**
+     * Constructor con el atributo principal de la Room
+     * @param id de la Room
+     */
+    public Room(String id) {
+        this.id = id;
+    }
+
+    /**
+     * Constructor con todos los atributos de la clase Room
+     * @param id de la Room
+     * @param numero de la Room
+     * @param tipo de la Room
+     * @param precioPorNoche de la Room
+     */
+    public Room(String id, int numero, String tipo, float precioPorNoche) {
+        this.id = id;
+        this.numero = numero;
+        this.tipo = tipo;
+        this.precioPorNoche = precioPorNoche;
+    }
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
-    public int getNumHabitacion() {
-        return numHabitacion;
+    public int getNumero() {
+        return this.numero;
     }
 
-    public void setNumHabitacion(int numHabitacion) {
-        this.numHabitacion = numHabitacion;
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
-    public String getTipoHabitacion() {
-        return tipoHabitacion;
+    public String getTipo() {
+        return this.tipo;
     }
 
-    public void setTipoHabitacion(String tipoHabitacion) {
-        this.tipoHabitacion = tipoHabitacion;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
-    public Float getPrecioNoche() {
-        return precioNoche;
+    public float getPrecioPorNoche() {
+        return this.precioPorNoche;
     }
 
-    public void setPrecioNoche(Float precioNoche) {
-        this.precioNoche = precioNoche;
+    public void setPrecioPorNoche(float precioPorNoche) {
+        this.precioPorNoche = precioPorNoche;
     }
 
-    public String getHotelId() {
-        return hotelId;
-    }
-
-    public void setHotelId(String hotelId) {
-        this.hotelId = hotelId;
-    }
-
-
-    public Room() {
-    }
-
-    public Room(String id, int numHabitacion, String tipoHabitacion, Float precioNoche, String hotelId,
-            Set<Booking> bookings) {
-        this.id = id;
-        this.numHabitacion = numHabitacion;
-        this.tipoHabitacion = tipoHabitacion;
-        this.precioNoche = precioNoche;
-        this.hotelId = hotelId;
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Room)) {
+            return false;
+        }
+        Room room = (Room) o;
+        return Objects.equals(id, room.id);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id);
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Room other = (Room) obj;
-        return Objects.equals(id, other.id);
-    }
-
-    
 }

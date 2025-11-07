@@ -1,10 +1,10 @@
 package com.docencia.hotel.persistance.jpa;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.docencia.hotel.domain.repository.IGuestJpaRepository;
 import com.docencia.hotel.model.Guest;
@@ -15,12 +15,12 @@ public class GuestJpaRepository implements IGuestRepository{
 
     private final IGuestJpaRepository repository;
 
-    public GuestJpaRepository(IGuestJpaRepository repository) {
+    public GuestJpaRepository(IGuestJpaRepository repository){
         this.repository = repository;
     }
 
     @Override
-    public boolean exists(String id) {
+    public boolean existsById(String id) {
         return repository.existsById(id);
     }
 
@@ -30,17 +30,11 @@ public class GuestJpaRepository implements IGuestRepository{
     }
 
     @Override
-    public Guest find(Guest guest) {
-        return repository.findFirstByName(guest.getNombre()).orElse(null);
+    public Set<Guest> findAll() {
+        return new HashSet<>(repository.findAll());
     }
 
     @Override
-    public List<Guest> findAll() {
-        return repository.findAll();
-    }
-
-    @Override
-    @Transactional
     public Guest save(Guest guest) {
         if (guest.getId() == null || guest.getId().isBlank()) {
             guest.setId(UUID.randomUUID().toString());
@@ -49,13 +43,12 @@ public class GuestJpaRepository implements IGuestRepository{
     }
 
     @Override
-    @Transactional
-    public boolean delete(String id) {
+    public boolean deleteById(String id) {
         if (!repository.existsById(id)) {
             return false;
         }
         repository.deleteById(id);
         return true;
     }
-
+    
 }

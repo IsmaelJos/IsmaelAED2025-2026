@@ -21,13 +21,8 @@ public class HotelJpaRepository implements IHotelRepository{
     }
 
     @Override
-    public boolean exists(String id) {
+    public boolean existsById(String id) {
         return repository.existsById(id);
-    }
-
-    @Override
-    public Hotel find(Hotel hotel) {
-        return repository.findFirstByName(hotel.getNombre()).orElse(null);
     }
 
     @Override
@@ -51,11 +46,14 @@ public class HotelJpaRepository implements IHotelRepository{
 
     @Override
     @Transactional
-    public boolean delete(String id) {
+    public boolean deleteById(String id) {
         if (!repository.existsById(id)) {
             return false;
         }
         repository.deleteById(id);
         return true;
     }
+
+
+
 }

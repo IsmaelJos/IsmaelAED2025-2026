@@ -11,12 +11,17 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "booking")
+@Table(name="booking")
 public class Booking {
-
     @Id
-    @Column(name = "id")
+    @Column(name="id")
     private String id;
+
+    @Column(name="check_in")
+    private Date fechaEntrada;
+
+    @Column(name="check_out")
+    private Date fechaSalida;
 
     @ManyToOne
     @JoinColumn(name="room_id",nullable=false)
@@ -26,39 +31,29 @@ public class Booking {
     @JoinColumn(name="gues_id", nullable=false)
     private Guest guest;
 
-    @Column(name="check_in")
-    private Date fechaEntrada;
+    public Booking() {
+    }
 
-    @Column(name="check_out")
-    private Date fechaSalida;
+    public Booking(String id) {
+        this.id = id;
+    }
 
+    public Booking(String id, Date fechaEntrada, Date fechaSalida) {
+        this.id = id;
+        this.fechaEntrada = fechaEntrada;
+        this.fechaSalida = fechaSalida;
+    }
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
-    public Room getRoom() {
-        return room;
-    }
-
-    public void setRoom(Room room) {
-        this.room = room;
-    }
-
-    public Guest getGuest() {
-        return guest;
-    }
-
-    public void setGuest(Guest guest) {
-        this.guest = guest;
-    }
-
     public Date getFechaEntrada() {
-        return fechaEntrada;
+        return this.fechaEntrada;
     }
 
     public void setFechaEntrada(Date fechaEntrada) {
@@ -66,41 +61,27 @@ public class Booking {
     }
 
     public Date getFechaSalida() {
-        return fechaSalida;
+        return this.fechaSalida;
     }
 
     public void setFechaSalida(Date fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
-    public Booking() {
-    }
-
-    public Booking(String id, Date fechaEntrada, Date fechaSalida, Room room, Guest guest) {
-        this.id = id;
-        this.fechaEntrada = fechaEntrada;
-        this.fechaSalida = fechaSalida;
-        this.room = room;
-        this.guest = guest;
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Booking)) {
+            return false;
+        }
+        Booking booking = (Booking) o;
+        return Objects.equals(id, booking.id) ;
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id);
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Booking other = (Booking) obj;
-        return Objects.equals(id, other.id);
-    }
-
     
-
 }

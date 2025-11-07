@@ -1,26 +1,29 @@
 package com.docencia.hotel.persistance.jpa;
 
-import java.util.List;
+import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.docencia.hotel.domain.repository.IBookingJpaRepository;
 import com.docencia.hotel.model.Booking;
+import com.docencia.hotel.model.Guest;
+import com.docencia.hotel.model.Room;
 import com.docencia.hotel.persistance.jpa.interfaces.IBookingRepository;
 
 @Repository
-public class BookingJpaRepository implements IBookingRepository /*extends AbstractJpaRepository<IBookingJpaRepository, String>*/{
+public class BookingJpaRepository implements IBookingRepository{
 
     private final IBookingJpaRepository repository;
 
-    public BookingJpaRepository(IBookingJpaRepository repository) {
+    public BookingJpaRepository(IBookingJpaRepository repository){
         this.repository = repository;
     }
 
     @Override
-    public boolean exists(String id) {
+    public boolean existsById(String id) {
         return repository.existsById(id);
     }
 
@@ -30,17 +33,11 @@ public class BookingJpaRepository implements IBookingRepository /*extends Abstra
     }
 
     @Override
-    public Booking find(Booking booking) {
-        return repository.findFirstByFechaEntrada(booking.getFechaEntrada()).orElse(null);
+    public Set<Booking> findAll() {
+        return new HashSet<>(repository.findAll());
     }
 
     @Override
-    public List<Booking> findAll() {
-        return repository.findAll();
-    }
-
-    @Override
-    @Transactional
     public Booking save(Booking booking) {
         if (booking.getId() == null || booking.getId().isBlank()) {
             booking.setId(UUID.randomUUID().toString());
@@ -49,12 +46,30 @@ public class BookingJpaRepository implements IBookingRepository /*extends Abstra
     }
 
     @Override
-    @Transactional
-    public boolean delete(String id) {
+    public boolean deleteById(String id) {
         if (!repository.existsById(id)) {
             return false;
         }
         repository.deleteById(id);
         return true;
     }
+
+    @Override
+    public Set<Booking> findByRoomIdAndDateRange(String roomId, Date startDate, Date endDate) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findByRoomIdAndDateRange'");
+    }
+
+    @Override
+    public Guest buscarPorHabitacion(Room room) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'buscarPorHabitacion'");
+    }
+
+    @Override
+    public Guest buscarPorRango(Date fechaEntrada, Date fechaSalida) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'buscarPorRango'");
+    }
+    
 }

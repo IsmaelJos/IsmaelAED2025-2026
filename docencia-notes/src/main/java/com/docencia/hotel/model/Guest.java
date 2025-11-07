@@ -6,82 +6,88 @@ import java.util.Set;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
 @Entity
-@Table(name = "guest")
+@Table(name="guest")
 public class Guest {
 
     @Id
-    @Column(name = "id")
+    @Column(name="id")
     private String id;
 
-    @Column(name = "full_name")
-    private String nombre;
+    @Column(name="full_name")
+    private String nombreCompelto;
 
-    @Column(name = "email")
+    @Column(name="email")
     private String email;
 
-    @Column(name = "phone")
-    private String phone;
+    @Column(name="phone")
+    private  String telefono;
+
+    @OneToMany(mappedBy="guest")
+    Set<Booking> bookings;
+
+    public Guest() {
+    }
+
+    public Guest(String id) {
+        this.id = id;
+    }
+
+    public Guest(String id, String nombreCompelto, String email, String telefono) {
+        this.id = id;
+        this.nombreCompelto = nombreCompelto;
+        this.email = email;
+        this.telefono = telefono;
+    }
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreCompelto() {
+        return this.nombreCompelto;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreCompelto(String nombreCompelto) {
+        this.nombreCompelto = nombreCompelto;
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getTelefono() {
+        return this.telefono;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public Guest() {
-    }
-
-    public Guest(String id, String nombre, String email, String phone, Set<Booking> bookings) {
-        this.id = id;
-        this.nombre = nombre;
-        this.email = email;
-        this.phone = phone;
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Guest)) {
+            return false;
+        }
+        Guest guest = (Guest) o;
+        return Objects.equals(id, guest.id);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Guest other = (Guest) obj;
-        return Objects.equals(id, other.id);
     }
 
     

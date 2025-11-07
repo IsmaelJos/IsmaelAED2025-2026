@@ -2,6 +2,7 @@ package com.docencia.hotel.persistance.jpa;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,74 +16,75 @@ import com.docencia.hotel.persistance.jpa.interfaces.IHotelRepository;
 
 @SpringBootTest
 @ActiveProfiles("test")
-public class HotelJpaRepositoryTest {
+class HotelJpaRepositoryTest {
+    
     @Autowired
     private IHotelRepository hotelRepository;
 
-    private Hotel baseHotel;
+    private Hotel hotelBase;
 
     @BeforeEach
     @Transactional
-    void beforeEach() {
-        Hotel h = new Hotel();
-        h.setNombre("Nombre base");
-        h.setDireccion("Direccion base");
+    void beforeEach(){
+        hotelBase = new Hotel("5","Las Aguilas","Calle las aguilas");
+        
+        assertThat(hotelBase.getId()).isNotNull();
+    }
 
-        baseHotel = hotelRepository.save(h);
 
-        assertThat(baseHotel.getId()).isNotNull();
+    @Test
+    @Transactional
+    void saveNullTest(){
+        Hotel hotel = new Hotel();
+        Hotel hotelsaved = hotelRepository.save(hotel);
+        
+        Assertions.assertNotNull(hotelsaved);
     }
 
     @Test
     @Transactional
-    void createReadFindByTitleTest() {
-        String id = baseHotel.getId();
-
-        Hotel leida = hotelRepository.findById(id);
-        assertThat(leida).isNotNull();
-        assertThat(leida.getNombre()).isEqualTo("Nombre base");
-        assertThat(leida.getDireccion()).isEqualTo("Direccion base");
-
-        Hotel buscadaPorTitulo = hotelRepository.find(leida);
-        assertThat(buscadaPorTitulo).isNotNull();
-        assertThat(buscadaPorTitulo.getId()).isEqualTo(id);
+    void saveBlankTest(){
+        Hotel hotel = new Hotel("");
+        Hotel hotelsaved = hotelRepository.save(hotel);
+        
+        Assertions.assertNotNull(hotelsaved);
     }
 
     @Test
     @Transactional
-    void updateContentTest() {
-        String id = baseHotel.getId();
-
-        baseHotel.setNombre("contenido modificado");
-        Hotel actualizada = hotelRepository.save(baseHotel);
-
-        assertThat(actualizada.getNombre())
-                .isEqualTo("contenido modificado");
-
-        Hotel reread = hotelRepository.findById(id);
-        assertThat(reread.getNombre())
-                .isEqualTo("contenido modificado");
+    void findByIdTest(){
+        hotelRepository.save(hotelBase);
+        String id = hotelBase.getId();
+        boolean exist = hotelRepository.existsById(id);
+        assertThat(exist).isTrue();
     }
 
     @Test
     @Transactional
-    void findByIdTest() {
-        String id = baseHotel.getId();
+    void findAllTest(){
+        int tamanio = hotelRepository.findAll().size();
+        Assertions.assertEquals( 1,tamanio);
+        hotelRepository.save(hotelBase);
+        Assertions.assertEquals( 2,hotelRepository.findAll().size());
 
-        boolean exists = hotelRepository.exists(id);
-
-        assertThat(exists).isTrue();
     }
+
 
     @Test
     @Transactional
-    void deleteNoteTest() {
-        String id = baseHotel.getId();
-
-        boolean borrada = hotelRepository.delete(id);
-
+    void deleteByIdTest(){
+        hotelRepository.save(hotelBase);
+        String id = hotelBase.getId();
+        boolean borrada = hotelRepository.deleteById(id);
         assertThat(borrada).isTrue();
-        assertThat(hotelRepository.exists(id)).isFalse();
+        assertThat(hotelRepository.existsById(id)).isFalse();
         assertThat(hotelRepository.findById(id)).isNull();
+    }
+
+    @Test
+    @Transactional
+    void deleteDontExistId(){
+        boolean borrada = hotelRepository.deleteById("jhjhghje");
+        assertThat(borrada).isFalse();
     }
 }
