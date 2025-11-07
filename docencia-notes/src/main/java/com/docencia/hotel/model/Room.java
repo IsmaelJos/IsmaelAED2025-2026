@@ -2,6 +2,7 @@ package com.docencia.hotel.model;
 
 
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,16 +20,16 @@ public class Room {
     private String id;
 
     @Column(name = "number")
-    private String numHabitacion;
+    private int numHabitacion;
 
     @Column(name = "type")
     private String tipoHabitacion;
 
     @Column(name = "price_per_night")
-    private Float precioNoche;
+    private float precioNoche;
 
     @ManyToOne
-    @JoinColumn(name = "hotel_id")
+    @JoinColumn(name="hotel_id",nullable=false)
     private String hotelId;
 
     public String getId() {
@@ -39,11 +40,11 @@ public class Room {
         this.id = id;
     }
 
-    public String getNumHabitacion() {
+    public int getNumHabitacion() {
         return numHabitacion;
     }
 
-    public void setNumHabitacion(String numHabitacion) {
+    public void setNumHabitacion(int numHabitacion) {
         this.numHabitacion = numHabitacion;
     }
 
@@ -71,10 +72,12 @@ public class Room {
         this.hotelId = hotelId;
     }
 
+
     public Room() {
     }
 
-    public Room(String id, String numHabitacion, String tipoHabitacion, Float precioNoche, String hotelId) {
+    public Room(String id, int numHabitacion, String tipoHabitacion, Float precioNoche, String hotelId,
+            Set<Booking> bookings) {
         this.id = id;
         this.numHabitacion = numHabitacion;
         this.tipoHabitacion = tipoHabitacion;

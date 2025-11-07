@@ -1,12 +1,13 @@
 package com.docencia.hotel.model;
 
+import java.sql.Date;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,19 +18,20 @@ public class Booking {
     @Column(name = "id")
     private String id;
 
-    @OneToOne
-    @JoinColumn(name = "room_id")
-    private String roomId;
+    @ManyToOne
+    @JoinColumn(name="room_id",nullable=false)
+    private Room room;
 
-    @OneToOne
-    @JoinColumn(name = "guest_id")
-    private String guestId;
+    @ManyToOne
+    @JoinColumn(name="gues_id", nullable=false)
+    private Guest guest;
 
-    @Column(name = "check_in")
-    private String nombre;
+    @Column(name="check_in")
+    private Date fechaEntrada;
 
-    @Column(name = "check_out")
-    private String email;
+    @Column(name="check_out")
+    private Date fechaSalida;
+
 
     public String getId() {
         return id;
@@ -39,47 +41,47 @@ public class Booking {
         this.id = id;
     }
 
-    public String getRoomId() {
-        return roomId;
+    public Room getRoom() {
+        return room;
     }
 
-    public void setRoomId(String roomId) {
-        this.roomId = roomId;
+    public void setRoom(Room room) {
+        this.room = room;
     }
 
-    public String getGuestId() {
-        return guestId;
+    public Guest getGuest() {
+        return guest;
     }
 
-    public void setGuestId(String guestId) {
-        this.guestId = guestId;
+    public void setGuest(Guest guest) {
+        this.guest = guest;
     }
 
-    public String getNombre() {
-        return nombre;
+    public Date getFechaEntrada() {
+        return fechaEntrada;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setFechaEntrada(Date fechaEntrada) {
+        this.fechaEntrada = fechaEntrada;
     }
 
-    public String getEmail() {
-        return email;
+    public Date getFechaSalida() {
+        return fechaSalida;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setFechaSalida(Date fechaSalida) {
+        this.fechaSalida = fechaSalida;
     }
 
     public Booking() {
     }
 
-    public Booking(String id, String roomId, String guestId, String nombre, String email) {
+    public Booking(String id, Date fechaEntrada, Date fechaSalida, Room room, Guest guest) {
         this.id = id;
-        this.roomId = roomId;
-        this.guestId = guestId;
-        this.nombre = nombre;
-        this.email = email;
+        this.fechaEntrada = fechaEntrada;
+        this.fechaSalida = fechaSalida;
+        this.room = room;
+        this.guest = guest;
     }
 
     @Override

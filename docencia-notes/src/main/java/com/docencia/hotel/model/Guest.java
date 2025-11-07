@@ -1,6 +1,7 @@
 package com.docencia.hotel.model;
 
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -59,7 +60,7 @@ public class Guest {
     public Guest() {
     }
 
-    public Guest(String id, String nombre, String email, String phone) {
+    public Guest(String id, String nombre, String email, String phone, Set<Booking> bookings) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;

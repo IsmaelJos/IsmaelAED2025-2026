@@ -31,7 +31,7 @@ public class GuestJpaRepository implements IGuestRepository{
 
     @Override
     public Guest find(Guest guest) {
-        return repository.findFirstByTitle(guest.getNombre()).orElse(null);
+        return repository.findFirstByName(guest.getNombre()).orElse(null);
     }
 
     @Override

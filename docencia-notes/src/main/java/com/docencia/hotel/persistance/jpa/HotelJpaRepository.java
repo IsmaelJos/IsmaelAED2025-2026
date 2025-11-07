@@ -1,6 +1,7 @@
 package com.docencia.hotel.persistance.jpa;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
@@ -15,7 +16,7 @@ public class HotelJpaRepository implements IHotelRepository{
 
     private final IHotelJpaRepository repository;
 
-    public HotelJpaRepository(IHotelJpaRepository repository) {
+    public HotelJpaRepository(IHotelJpaRepository repository){
         this.repository = repository;
     }
 
@@ -25,18 +26,18 @@ public class HotelJpaRepository implements IHotelRepository{
     }
 
     @Override
+    public Hotel find(Hotel hotel) {
+        return repository.findFirstByName(hotel.getNombre()).orElse(null);
+    }
+
+    @Override
     public Hotel findById(String id) {
         return repository.findById(id).orElse(null);
     }
 
     @Override
-    public Hotel find(Hotel hotel) {
-        return repository.findFirstByTitle(hotel.getNombre()).orElse(null);
-    }
-
-    @Override
-    public List<Hotel> findAll() {
-        return repository.findAll();
+    public Set<Hotel> findAll() {
+        return new HashSet<>(repository.findAll());
     }
 
     @Override

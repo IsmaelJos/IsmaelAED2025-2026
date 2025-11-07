@@ -1,7 +1,5 @@
 package com.docencia.hotel.model;
 
-
-
 import java.util.Objects;
 
 import jakarta.persistence.Column;
@@ -22,6 +20,7 @@ public class Hotel {
 
     @Column(name = "address")
     private String direccion;
+
 
     public String getId() {
         return id;

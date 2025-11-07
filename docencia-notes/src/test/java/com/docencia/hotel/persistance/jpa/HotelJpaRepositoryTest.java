@@ -1,4 +1,4 @@
-package com.docencia.hotel.model;
+package com.docencia.hotel.persistance.jpa;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -9,12 +9,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.docencia.hotel.model.Hotel;
 import com.docencia.hotel.persistance.jpa.interfaces.IHotelRepository;
+
 
 @SpringBootTest
 @ActiveProfiles("test")
-public class HotelTest {
-
+public class HotelJpaRepositoryTest {
     @Autowired
     private IHotelRepository hotelRepository;
 
@@ -84,5 +85,4 @@ public class HotelTest {
         assertThat(hotelRepository.exists(id)).isFalse();
         assertThat(hotelRepository.findById(id)).isNull();
     }
-
 }

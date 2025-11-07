@@ -31,7 +31,7 @@ public class BookingJpaRepository implements IBookingRepository /*extends Abstra
 
     @Override
     public Booking find(Booking booking) {
-        return repository.findFirstByTitle(booking.getNombre()).orElse(null);
+        return repository.findFirstByFechaEntrada(booking.getFechaEntrada()).orElse(null);
     }
 
     @Override

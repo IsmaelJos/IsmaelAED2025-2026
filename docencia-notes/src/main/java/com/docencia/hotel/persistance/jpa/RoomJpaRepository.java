@@ -31,7 +31,7 @@ public class RoomJpaRepository implements IRoomRepository{
 
     @Override
     public Room find(Room room) {
-        return repository.findFirstByTitle(room.getNumHabitacion()).orElse(null);
+        return repository.findFirstBynNumHabitacion(room.getNumHabitacion()).orElse(null);
     }
 
     @Override

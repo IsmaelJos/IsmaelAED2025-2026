@@ -1,6 +1,6 @@
 package com.docencia.hotel.persistance.jpa.interfaces;
 
-import java.util.List;
+import java.util.Set;
 
 import com.docencia.hotel.model.Hotel;
 
@@ -38,7 +38,7 @@ public interface IHotelRepository {
      *
      * @return lista con todas las hotels
      */
-    List<Hotel> findAll();
+    Set<Hotel> findAll();
 
     /**
      * Inserta o actualiza una hotel.
