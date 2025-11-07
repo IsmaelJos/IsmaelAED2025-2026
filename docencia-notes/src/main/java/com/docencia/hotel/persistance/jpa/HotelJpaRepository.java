@@ -7,9 +7,9 @@ import java.util.UUID;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.docencia.hotel.domain.repository.IHotelJpaRepository;
-import com.docencia.hotel.model.Hotel;
+import com.docencia.hotel.domain.model.Hotel;
 import com.docencia.hotel.persistance.jpa.interfaces.IHotelRepository;
+import com.docencia.hotel.repository.IHotelJpaRepository;
 
 @Repository
 public class HotelJpaRepository implements IHotelRepository{

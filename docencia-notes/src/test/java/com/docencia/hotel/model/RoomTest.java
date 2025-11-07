@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.docencia.hotel.domain.model.Room;
+
 import jakarta.transaction.Transactional;
 
 class RoomModelTest {

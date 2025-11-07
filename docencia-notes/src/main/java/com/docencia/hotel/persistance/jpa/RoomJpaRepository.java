@@ -5,9 +5,10 @@ import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
-import com.docencia.hotel.domain.repository.IRoomJpaRepository;
-import com.docencia.hotel.model.Room;
+
+import com.docencia.hotel.domain.model.Room;
 import com.docencia.hotel.persistance.jpa.interfaces.IRoomRepository;
+import com.docencia.hotel.repository.IRoomJpaRepository;
 
 @Repository
 public class RoomJpaRepository implements IRoomRepository{

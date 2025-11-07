@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.docencia.hotel.model.Hotel;
+import com.docencia.hotel.domain.model.Hotel;
 import com.docencia.hotel.persistance.jpa.interfaces.IHotelRepository;
 
 

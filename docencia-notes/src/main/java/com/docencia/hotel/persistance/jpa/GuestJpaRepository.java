@@ -6,9 +6,9 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
 
-import com.docencia.hotel.domain.repository.IGuestJpaRepository;
-import com.docencia.hotel.model.Guest;
+import com.docencia.hotel.domain.model.Guest;
 import com.docencia.hotel.persistance.jpa.interfaces.IGuestRepository;
+import com.docencia.hotel.repository.IGuestJpaRepository;
 
 @Repository
 public class GuestJpaRepository implements IGuestRepository{

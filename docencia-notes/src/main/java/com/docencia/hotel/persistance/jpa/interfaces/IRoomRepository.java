@@ -2,7 +2,7 @@ package com.docencia.hotel.persistance.jpa.interfaces;
 
 import java.util.Set;
 
-import com.docencia.hotel.model.Room;
+import com.docencia.hotel.domain.model.Room;
 
 
 public interface IRoomRepository {

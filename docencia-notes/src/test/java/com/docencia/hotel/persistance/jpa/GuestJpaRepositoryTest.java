@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
-import com.docencia.hotel.model.Guest;
+import com.docencia.hotel.domain.model.Guest;
 import com.docencia.hotel.persistance.jpa.interfaces.IGuestRepository;
 
 import jakarta.transaction.Transactional;

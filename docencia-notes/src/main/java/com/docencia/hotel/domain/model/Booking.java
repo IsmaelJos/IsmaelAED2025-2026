@@ -1,4 +1,4 @@
-package com.docencia.hotel.model;
+package com.docencia.hotel.domain.model;
 
 import java.sql.Date;
 import java.util.Objects;

@@ -2,7 +2,7 @@ package com.docencia.hotel.persistance.jpa.interfaces;
 
 import java.util.Set;
 
-import com.docencia.hotel.model.Guest;
+import com.docencia.hotel.domain.model.Guest;
 
 
 public interface IGuestRepository {

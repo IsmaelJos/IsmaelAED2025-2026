@@ -3,9 +3,9 @@ package com.docencia.hotel.persistance.jpa.interfaces;
 import java.sql.Date;
 import java.util.Set;
 
-import com.docencia.hotel.model.Booking;
-import com.docencia.hotel.model.Guest;
-import com.docencia.hotel.model.Room;
+import com.docencia.hotel.domain.model.Booking;
+import com.docencia.hotel.domain.model.Guest;
+import com.docencia.hotel.domain.model.Room;
 
 public interface IBookingRepository {
 

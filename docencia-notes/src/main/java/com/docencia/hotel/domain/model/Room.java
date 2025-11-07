@@ -1,4 +1,4 @@
-package com.docencia.hotel.model;
+package com.docencia.hotel.domain.model;
 
 
 import java.util.Objects;

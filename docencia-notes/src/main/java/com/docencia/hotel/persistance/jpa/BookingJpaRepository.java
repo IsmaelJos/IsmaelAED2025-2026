@@ -7,11 +7,11 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
 
-import com.docencia.hotel.domain.repository.IBookingJpaRepository;
-import com.docencia.hotel.model.Booking;
-import com.docencia.hotel.model.Guest;
-import com.docencia.hotel.model.Room;
+import com.docencia.hotel.domain.model.Booking;
+import com.docencia.hotel.domain.model.Guest;
+import com.docencia.hotel.domain.model.Room;
 import com.docencia.hotel.persistance.jpa.interfaces.IBookingRepository;
+import com.docencia.hotel.repository.IBookingJpaRepository;
 
 @Repository
 public class BookingJpaRepository implements IBookingRepository{
