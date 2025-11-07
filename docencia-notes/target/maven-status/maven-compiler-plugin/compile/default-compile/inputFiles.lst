@@ -3,9 +3,7 @@
 /home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/hotel/domain/repository/IBookingJpaRepository.java
 /home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/hotel/persistance/jpa/interfaces/IBookingRepository.java
 /home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/hotel/persistance/jpa/GuestJpaRepository.java
-/home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/repo/jpa/INoteJpaRepository.java
 /home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/hotel/domain/repository/IHotelJpaRepository.java
-/home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/repo/jpa/NoteJpaRepository.java
 /home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/hotel/persistance/jpa/RoomJpaRepository.java
 /home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/hotel/model/Guest.java
 /home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/hotel/model/Room.java
@@ -15,8 +13,5 @@
 /home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/hotel/persistance/jpa/interfaces/IGuestRepository.java
 /home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/hotel/persistance/jpa/interfaces/IRoomRepository.java
 /home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/hotel/domain/repository/IRoomJpaRepository.java
-/home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/repo/INoteRepository.java
-/home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/model/Note.java
-/home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/hotel/persistance/jpa/AbstractJpaRepository.java
 /home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/hotel/persistance/jpa/HotelJpaRepository.java
 /home/dam/Documentos/IsmaelJoseGitHub/IsmaelAED2025-2026/docencia-notes/src/main/java/com/docencia/hotel/persistance/jpa/interfaces/IHotelRepository.java
