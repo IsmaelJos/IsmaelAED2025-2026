@@ -101,7 +101,7 @@ public abstract class FileNoteAbstractRepository implements INotRepository {
         lock.writeLock().lock();
         try {
             List<Note> notes = findAll();
-            if (StringUtils.isEmpty(nameFile)){
+            if (StringUtils.isEmpty(note.getId())){
                 note.setId(UUID.randomUUID().toString());
             }
             notes.removeIf(n -> Objects.equals(n.getId(), note.getId()));
