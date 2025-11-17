@@ -115,7 +115,17 @@ public abstract class FileNoteAbstractRepository implements INotRepository {
 
     @Override
     public boolean delete(String id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        lock.writeLock().lock();
+        try {
+            List<Note> notes = findAll();
+            if (!notes.contains(notes)) {
+                return false;
+            }
+            notes.removeIf(n -> Objects.equals(n.getId(), note.getId()));
+            writeAllInternal(notes);
+            return note;
+        } finally {
+            lock.writeLock().unlock();
+        }
     }
 }
