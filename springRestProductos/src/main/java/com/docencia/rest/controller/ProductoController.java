@@ -13,18 +13,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.docencia.rest.domain.Producto;
 import com.docencia.rest.exeption.ResourceNotFoundException;
-import com.docencia.rest.modelo.Producto;
 import com.docencia.rest.service.ProductoService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/v1/producto")
+@Tag(name = "Productos", description = "Operaciones sobre productos")
 public class ProductoController {
 
     private ProductoService productoService;
@@ -77,7 +79,7 @@ public class ProductoController {
             @ApiResponse(responseCode = "400", description = "Bad request")
     })
     @PostMapping("/add/")
-    public Producto createProducto(@Valid @RequestBody Producto producto) {
+    public ProductoEntity createProducto(@Valid @RequestBody ProductoEntity producto) {
         return productoService.save(producto);
     }
 }

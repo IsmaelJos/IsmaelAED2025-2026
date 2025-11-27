@@ -8,9 +8,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Document(collection = "producto_detalle")
-public class DetalleProducto {
+public class DetalleProductoDocument {
     @Id
-    private String id;
+    private int id;
     private int productoId;
     private String descripcionLarga;
     private Map<String, String> especificacionesTecnicas;

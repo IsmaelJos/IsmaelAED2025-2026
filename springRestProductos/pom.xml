@@ -12,7 +12,7 @@
 	<artifactId>springRestProductos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>springRestProducto</name>
+	<name>springRestProductos</name>
 	<description>ejemplo de relacion de dos bbdd (relacional + no relacional)</description>
 	<url/>
 	<licenses>
