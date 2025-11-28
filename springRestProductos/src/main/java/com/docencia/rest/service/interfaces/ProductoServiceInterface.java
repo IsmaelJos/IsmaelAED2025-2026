@@ -3,18 +3,18 @@ package com.docencia.rest.service.interfaces;
 import java.util.List;
 import java.util.Optional;
 
-import com.docencia.rest.modelo.ProductoEntity;
+import com.docencia.rest.domain.Producto;
 
 public interface ProductoServiceInterface {
 
-    Optional<ProductoEntity> find(ProductoEntity producto);
-    Optional<ProductoEntity> findById(int id);
+    Optional<Producto> find(Producto producto);
+    Optional<Producto> findById(int id);
 
-    List<ProductoEntity> findAll();
+    List<Producto> findAll();
 
-    ProductoEntity save(ProductoEntity producto);
+    Producto save(Producto producto);
 
-    boolean delete(ProductoEntity producto);
+    boolean delete(Producto producto);
     boolean deleteById(int id);
 
 }

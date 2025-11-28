@@ -14,8 +14,23 @@ public class Producto {
     // private Categoria categoria;
 
     // Parte NoSQL (documento)
-    // private DetalleProducto detalle;
+    private DetalleProducto detalle;
 
+    public Producto() {
+    }
+    
+    public Producto(int id, String nombre, BigDecimal precio, int stock, DetalleProducto detalle) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+        this.detalle = detalle;
+    }
+
+    public Producto(int id) {
+        this.id = id;
+    }
+   
     // getters y setters...
     public int getId() {
         return id;
@@ -41,20 +56,13 @@ public class Producto {
     public void setStock(int stock) {
         this.stock = stock;
     }
-
-    public Producto() {
+    public DetalleProducto getDetalle() {
+        return detalle;
     }
-    
-    public Producto(String nombre, BigDecimal precio, int stock) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.stock = stock;
+    public void setDetalle(DetalleProducto detalle) {
+        this.detalle = detalle;
     }
 
-    public Producto(int id) {
-        this.id = id;
-    }
-   
     @Override
     public int hashCode() {
         return Objects.hash(id);
@@ -71,6 +79,7 @@ public class Producto {
         Producto other = (Producto) obj;
         return Objects.equals(id, other.id);
     }
+    
 
     
 }

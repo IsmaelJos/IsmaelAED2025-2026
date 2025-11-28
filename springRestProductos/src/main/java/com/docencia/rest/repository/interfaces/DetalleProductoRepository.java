@@ -7,7 +7,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import com.docencia.rest.modelo.DetalleProductoDocument;
 
 public interface DetalleProductoRepository extends MongoRepository<DetalleProductoDocument, Integer> {
-    // Optional<DetalleProductoToDocument> findByProductoId(int productoId);
-    // DetalleProductoToDocument save(int productoId, DetalleProductoToDocument detalle);
-    // boolean deleteById(int productoId);
+     Optional<DetalleProductoDocument> findByProductoId(int productoId);
+     void deleteByProductoId(int productoId);
 }

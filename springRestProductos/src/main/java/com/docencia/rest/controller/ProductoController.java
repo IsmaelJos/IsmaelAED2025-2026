@@ -79,7 +79,7 @@ public class ProductoController {
             @ApiResponse(responseCode = "400", description = "Bad request")
     })
     @PostMapping("/add/")
-    public ProductoEntity createProducto(@Valid @RequestBody ProductoEntity producto) {
+    public Producto createProducto(@Valid @RequestBody Producto producto) {
         return productoService.save(producto);
     }
 }
