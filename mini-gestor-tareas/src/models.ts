@@ -1,11 +1,25 @@
-// export de un interfaz tarea con id, titulo, una descripcion que puede ser null y un booleano completado
+/**
+ * Representa una tarea del gestor.
+ */
 export interface Tarea {
+  /**
+   * Identificador numerico unico.
+   */
   id: number;
+  /**
+   * Titulo breve de la tarea.
+   */
   titulo: string;
+  /**
+   * Detalle opcional de la tarea.
+   */
   descripcion?: string;
+  /**
+   * Indica si la tarea esta completada.
+   */
   completada: boolean;
 }
-// export de un tipo IdTarea de valor numero
+
 export type IdTarea = number;
-// export de un tipo FiltroTarea que puede ser uno de tres elementos "todas" o "pendientes" o "completadas"
+
 export type FiltroTarea = "todas" | "pendientes" | "completadas";
