@@ -3,10 +3,7 @@ package com.docencia.tareas.repository;
 import java.util.List;
 
 import com.docencia.tareas.model.Tarea;
-/**
- * @author nexphernandez
- * @version 1.0.0
- */
+
 public interface ITareaRepository {
     /**
      * Funcion que agrega una tarea

@@ -1,16 +1,5 @@
 package com.docencia.tareas.rest;
 
-<<<<<<< HEAD
-import java.util.List;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import com.docencia.tareas.model.Tarea;
-import com.docencia.tareas.service.TareaService;
-
-=======
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,7 +16,6 @@ import com.docencia.tareas.service.TareaService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
->>>>>>> a2f869cb6a9fb532c7c471e4a91b93055d80e409
 @RestController
 @RequestMapping("/api/tareas")
 public class TareaRestController {
@@ -37,17 +25,10 @@ public class TareaRestController {
     public TareaRestController(TareaService tareaService) {
         this.tareaService = tareaService;
     }
-<<<<<<< HEAD
-
-    @GetMapping
-    public List<Tarea> listarTodas() {
-        return tareaService.listarTodas();
-=======
     
     @GetMapping
     public TareasResponse listarTodas() {
         return new TareasResponse(tareaService.listarTodas());
->>>>>>> a2f869cb6a9fb532c7c471e4a91b93055d80e409
     }
 
     @GetMapping("/{id}")
@@ -93,8 +74,4 @@ public class TareaRestController {
         }
         return ResponseEntity.noContent().build();
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a2f869cb6a9fb532c7c471e4a91b93055d80e409

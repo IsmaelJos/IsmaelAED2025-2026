@@ -6,10 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.docencia.tareas.model.Tarea;
-/**
- * @author nexphernandez
- * @version 1.0.0
- */
+
 @Repository
 public class TareaRepository implements ITareaRepository {
     private final List<Tarea> tareas;

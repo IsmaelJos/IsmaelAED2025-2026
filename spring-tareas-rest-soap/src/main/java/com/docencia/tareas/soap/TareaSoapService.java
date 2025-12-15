@@ -12,11 +12,7 @@ import jakarta.jws.WebService;
 @WebService(
     serviceName = "TareaService",
     portName = "TareaPort",
-<<<<<<< HEAD
-    targetNamespace = "http://ies.puerto.es/ws/tarea",
-=======
     targetNamespace = "http://tareas.ies.puerto.es/",
->>>>>>> a2f869cb6a9fb532c7c471e4a91b93055d80e409
     endpointInterface = "com.docencia.tareas.soap.ITareaSoapEndpoint"
 )
 @Service
