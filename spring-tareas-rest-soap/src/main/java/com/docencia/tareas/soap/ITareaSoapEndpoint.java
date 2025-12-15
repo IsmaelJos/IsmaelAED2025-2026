@@ -8,6 +8,7 @@ import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import jakarta.jws.WebService;
 
+<<<<<<< HEAD
 @WebService(targetNamespace = "http://ies.puerto.es/ws/tarea", name = "TareaPortType")
 public interface ITareaSoapEndpoint {
     
@@ -52,5 +53,26 @@ public interface ITareaSoapEndpoint {
      * @return true/false
      */
     @WebMethod(operationName = "eliminar")
+=======
+@WebService(
+    targetNamespace = "http://tareas.ies.puerto.es/",
+    name = "TareaPortType"
+)
+public interface ITareaSoapEndpoint {
+
+    @WebMethod(operationName = "ListAll")
+    List<Tarea> listar();
+
+    @WebMethod 
+    Tarea buscar( @WebParam(name = "id") Long id);
+
+    @WebMethod
+    Tarea crear(String titulo, String descripcion);
+
+    @WebMethod
+    Tarea actualizar(Long id, String titulo, String descripcion, Boolean completada);
+
+    @WebMethod
+>>>>>>> a2f869cb6a9fb532c7c471e4a91b93055d80e409
     boolean eliminar(Long id);
 }

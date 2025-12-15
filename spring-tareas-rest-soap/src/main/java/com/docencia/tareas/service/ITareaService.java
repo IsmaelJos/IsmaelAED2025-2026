@@ -3,6 +3,7 @@ package com.docencia.tareas.service;
 import java.util.List;
 
 import com.docencia.tareas.model.Tarea;
+<<<<<<< HEAD
 /**
  * @author nexphernandez
  * @version 1.0.0
@@ -44,5 +45,18 @@ public interface ITareaService {
      * @param id identificador de la tarea a borrar
      * @return true/false
      */
+=======
+
+public interface ITareaService {
+
+    List<Tarea> listarTodas();
+
+    Tarea buscarPorId(Long id);
+
+    Tarea crearTarea(String titulo, String descripcion);
+
+    Tarea actualizarTarea(Long id, String titulo, String descripcion, Boolean completada);
+
+>>>>>>> a2f869cb6a9fb532c7c471e4a91b93055d80e409
     boolean eliminarTarea(Long id);
 }
